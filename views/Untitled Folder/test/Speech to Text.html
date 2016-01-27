@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ct" content="">
+    <title>Speech to Text</title>
+    <link href="./Speech to Text_files/watson-bootstrap-style.css" rel="stylesheet">
+    <link href="./Speech to Text_files/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="http://localhost:3000/images/favicon.ico">
+  <link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css"><script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script><script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script><style type="text/css"></style></head>
+  <body>
+    <!-- top nav section -->
+
+
+
+    <!-- Service Description Bar -->
+
+    <!-- Step 1 Section-->
+    <div class="container">
+      <!-- Step 3 Section-->
+      <!-- First column of inputs -->
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h2>Transcribe Audio</h2>
+          <div class="col-lg-8 col-md-12 col-sm-12">
+            <p class="help-block" style="padding-right: 3em;">Use your microphone (compatible only with <a href="https://www.google.com/intl/en/chrome/browser/desktop/">Google Chrome</a> and <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>), upload pre-recorded audio (WAV containing uncompressed audio or FLAC file formats), drag and drop recorded audio onto the page, or use the audio samples provided. The returned text includes metadata that provides the timestamps for start and end times of individual words, confidence scores behind those words, and alternative hypotheses for phrases.</p>
+          </div><!-- .col-lg-8 -->
+          <div class="col-lg-4 col-md-12 col-sm-12">
+          </div>
+
+        </div><!-- .col-lg-12 -->
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              <span id="dropdownMenuDefault" class="dropdown-text">US English broadband model (16KHz) </span>
+              <span class="caret"></span>
+              </button>
+              <ul id="dropdownMenuList" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="ar-AR_BroadbandModel">Modern Standard Arabic broadband model (16KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="en-UK_BroadbandModel">UK English broadband model (16KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="en-UK_NarrowbandModel">UK English narrowband model (8KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="en-US_BroadbandModel">US English broadband model (16KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="en-US_NarrowbandModel">US English narrowband model (8KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="es-ES_BroadbandModel">Spanish broadband model (16KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="es-ES_NarrowbandModel">Spanish narrowband model (8KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="ja-JP_BroadbandModel">Japanese broadband model (16KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="ja-JP_NarrowbandModel">Japanese narrowband model (8KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="pt-BR_BroadbandModel">Brazilian Portuguese broadband model (16KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="pt-BR_NarrowbandModel">Brazilian Portuguese narrowband model (8KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="zh-CN_BroadbandModel">Mandarin broadband model (16KHz)</a></li><li role="presentation"><a role="menu-item" href="./Speech to Text_files/Speech to Text.html" data-model="zh-CN_NarrowbandModel">Mandarin narrowband model (8KHz)</a></li></ul>
+            </div>
+
+          </div><!-- .col-lg-6 -->
+
+        </div><!-- row -->
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="audioParent">
+              <audio style="display:none" class="audio" controls="">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        </div><!-- row -->
+
+
+        <div class="row">
+          <nav class="navbar navbar-inverse">
+          <ul class="navbar-text">
+            <li id="recordButton" class="button-row nav-inverse-color">
+            <img id="microphoneIcon" src="./Speech to Text_files/microphone.svg" class="icon">
+            <span class="nav-label">Record Audio</span>
+            </li>
+            <li class="file-upload button-row nav-inverse-color">
+            <div id="fileUploadTarget">
+              <img src="./Speech to Text_files/upload.svg" class="icon">
+              <span class="nav-label">Select File</span>
+            </div>
+            </li>
+            
+            
+          </ul>
+
+          </nav>
+        </div>
+        <!-- Tab panes -->
+        <div class="row" style="  margin: 0;">
+          <div class="col-lg-12 col-md-12 col-sm-12" style="padding: 0;">
+            <div class="well">
+              <form autocomplete="off" class="form-horizontal">
+                <div role="tabpanel">
+                  <!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="http://localhost:3000/#home2" aria-controls="home" role="tab" data-toggle="tab">Text</a></li>
+                    <li role="presentation"><a href="http://localhost:3000/#profile2" aria-controls="profile" role="tab" data-toggle="tab">JSON</a></li>
+                  </ul>
+                  <div class="hr-tab"></div>
+                  <fieldset>
+                    <div class="row error-row">
+                      <div class="col-lg-12">
+                        <div id="errorAlert">
+                          <span id="errorMessage"></span>
+                          <a class="pull-right" href="http://localhost:3000/#" id="errorClose">×</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row notification-row">
+                      <div class="col-lg-12">
+                        <div id="notificationAlert">
+                          <span id="notificationMessage"></span>
+                          <a class="pull-right" href="http://localhost:3000/#" id="notificationClose">×</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group row tabpanel-row">
+                      <div class="col-lg-12">
+                        <div class="tab-content">
+                          <div role="tabpanel" class="tab-pane active" id="home2">
+                            <textarea readonly="" id="resultsText" dir="auto"></textarea>
+                          </div>
+                          <div role="tabpanel" class="tab-pane" id="profile2">
+                            <textarea readonly="" id="resultsJSON"></textarea>
+                          </div>
+                        </div>
+                      </div><!-- .col-lg-12 -->
+                    </div>
+                  </fieldset>
+                </div>
+              </form>
+            </div>
+          </div><!-- /.well -->
+        </div><!-- /.tabpanel -->
+
+        <div class="row">
+          <!-- /.col -->
+        </div><!-- /.row -->
+
+      </div><!-- /.container -->
+
+      <!-- for file upload dialog in toolbar -->
+      <input style="display:none" type="file" id="fileUploadDialog">
+
+      <!-- Place js files at the end of the document, with fallbacks for CDNs -->
+      <script src="./Speech to Text_files/jquery-1.11.3.min.js"></script>
+      <script src="./Speech to Text_files/bootstrap.min.js"></script>
+      <script src="./Speech to Text_files/index.js"></script>
+  
+
+
+</div><mytubeelement id="myTubeRelayElementToPage" event="preferencesUpdated" data="{&quot;bundle&quot;:{&quot;label_delimitor&quot;:&quot;:&quot;,&quot;percentage&quot;:&quot;%&quot;,&quot;smart_buffer&quot;:&quot;Smart Buffer&quot;,&quot;start_playing_when_buffered&quot;:&quot;Start playing when buffered&quot;,&quot;sound&quot;:&quot;Sound&quot;,&quot;desktop_notification&quot;:&quot;Desktop Notification&quot;,&quot;continuation_on_next_line&quot;:&quot;-&quot;,&quot;loop&quot;:&quot;Loop&quot;,&quot;only_notify&quot;:&quot;Only Notify&quot;,&quot;estimated_time&quot;:&quot;Estimated Time&quot;,&quot;global_preferences&quot;:&quot;Global Preferences&quot;,&quot;no_notification_supported_on_your_browser&quot;:&quot;No notification style supported on your browser version&quot;,&quot;video_buffered&quot;:&quot;Video Buffered&quot;,&quot;buffered&quot;:&quot;Buffered&quot;,&quot;hyphen&quot;:&quot;-&quot;,&quot;buffered_message&quot;:&quot;The video has been buffered as requested and is ready to play.&quot;,&quot;not_supported&quot;:&quot;Not Supported&quot;,&quot;on&quot;:&quot;On&quot;,&quot;off&quot;:&quot;Off&quot;,&quot;click_to_enable_for_this_site&quot;:&quot;Click to enable for this site&quot;,&quot;desktop_notification_denied&quot;:&quot;You have denied permission for desktop notification for this site&quot;,&quot;notification_status_delimitor&quot;:&quot;;&quot;,&quot;error&quot;:&quot;Error&quot;,&quot;adblock_interferance_message&quot;:&quot;Adblock (or similar extension) is known to interfere with SmartVideo. Please add this url to adblock whitelist.&quot;,&quot;calculating&quot;:&quot;Calculating&quot;,&quot;waiting&quot;:&quot;Waiting&quot;,&quot;will_start_buffering_when_initialized&quot;:&quot;Will start buffering when initialized&quot;,&quot;will_start_playing_when_initialized&quot;:&quot;Will start playing when initialized&quot;,&quot;completed&quot;:&quot;Completed&quot;,&quot;buffering_stalled&quot;:&quot;Buffering is stalled. Will stop.&quot;,&quot;stopped&quot;:&quot;Stopped&quot;,&quot;hr&quot;:&quot;Hr&quot;,&quot;min&quot;:&quot;Min&quot;,&quot;sec&quot;:&quot;Sec&quot;,&quot;any_moment&quot;:&quot;Any Moment&quot;,&quot;popup_donate_to&quot;:&quot;Donate to&quot;,&quot;extension_id&quot;:&quot;lnkdbjbjpnpjeciipoaflmpcddinpjjp&quot;},&quot;prefs&quot;:{&quot;desktopNotification&quot;:true,&quot;soundNotification&quot;:true,&quot;logLevel&quot;:0,&quot;enable&quot;:true,&quot;loop&quot;:false,&quot;hidePopup&quot;:false,&quot;autoPlay&quot;:false,&quot;autoBuffer&quot;:false,&quot;autoPlayOnBuffer&quot;:false,&quot;autoPlayOnBufferPercentage&quot;:42,&quot;autoPlayOnSmartBuffer&quot;:true,&quot;quality&quot;:&quot;default&quot;,&quot;fshd&quot;:false,&quot;onlyNotification&quot;:false,&quot;enableFullScreen&quot;:true,&quot;saveBandwidth&quot;:false,&quot;hideAnnotations&quot;:false,&quot;turnOffPagedBuffering&quot;:false}}"></mytubeelement><mytubeelement id="myTubeRelayElementToTab" event="relayPrefs" data="{&quot;loadBundle&quot;:true}"></mytubeelement></body></html>
